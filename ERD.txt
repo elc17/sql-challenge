@@ -1,0 +1,43 @@
+# Relationships
+
+Dept
+-
+dept_no INT PK 
+dept_name VARCHAR(255)
+
+Dept_Emp
+-
+emp_no INT FK -< Dept.dept_no
+dept_no INT
+from_date VARCHAR(255)
+to_date VARCHAR(255)
+
+Dept_Man
+-
+dept_no INT FK -< Dept.dept_no
+emp_no INT FK >- Emp.emp_no
+from_date VARCHAR(255)
+to_date VARCHAR(255)
+
+Emp
+-
+emp_no INT PK FK -< Dept_Emp.emp_no
+birth_date VARCHAR(255)
+first_name VARCHAR(255)
+last_name VARCHAR(255)
+gender VARCHAR(5)
+hire_date VARCHAR(255)
+
+Title
+-
+emp_no INT FK >- Emp.emp_no
+title VARCHAR(255)
+from_date VARCHAR(255)
+to_date VARCHAR(255)
+
+Salary
+-
+emp_no INT FK >- Emp.emp_no
+salary INT
+from_date VARCHAR(255) 
+to_date VARCHAR(255)
